@@ -1,0 +1,12 @@
+# clj
+.cpcache
+
+# npm
+node_modules
+
+# shadow-cljs
+.shadow-cljs
+target
+
+# nREPL
+.nrepl-port
