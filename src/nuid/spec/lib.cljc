@@ -10,7 +10,9 @@
 
 (def email-address-regex #"^.+@.+\..+$")
 (def email-address?
-  (comp boolean (partial re-matches email-address-regex)))
+  (comp
+   boolean
+   (partial re-matches email-address-regex)))
 
 (s/def ::email-address
   (s/with-gen
