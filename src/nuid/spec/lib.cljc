@@ -5,8 +5,11 @@
    #?@(:clj  [[clojure.alpha.spec :as s]]
        :cljs [[clojure.spec.alpha :as s]])))
 
-(s/def ::non-empty-string
+(s/def ::not-empty-string
   (s/and string? seq))
+
+(def not-empty-string?
+  (partial s/valid? ::not-empty-string))
 
 (def email-address-regex #"^.+@.+\..+$")
 (def email-address?
