@@ -19,7 +19,9 @@
 
 (s/def ::email-address
   (s/with-gen
-    email-address?
+    (s/and
+     string?
+     email-address?)
     (fn [] generators/email-address)))
 
 (def keys-spec?
