@@ -1,9 +1,8 @@
 (ns nuid.spec.lib
   (:refer-clojure :exclude [select-keys])
   (:require
-   [nuid.spec.generators :as generators]
-   #?@(:clj  [[clojure.alpha.spec :as s]]
-       :cljs [[clojure.spec.alpha :as s]])))
+   [clojure.spec.alpha :as s]
+   [nuid.spec.generators :as generators]))
 
 (def keys-spec?
   (comp boolean #{`s/keys} first s/form))

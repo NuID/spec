@@ -1,8 +1,7 @@
 (ns nuid.spec
   (:require
-   [nuid.spec.generators :as generators]
-   #?@(:clj  [[clojure.alpha.spec :as s]]
-       :cljs [[clojure.spec.alpha :as s]])))
+   [clojure.spec.alpha :as s]
+   [nuid.spec.generators :as generators]))
 
 (s/def ::not-empty-string
   (s/and string? seq))

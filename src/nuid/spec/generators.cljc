@@ -1,12 +1,8 @@
 (ns nuid.spec.generators
   (:require
-   #?@(:clj
-       [[clojure.alpha.spec :as s]
-        [clojure.alpha.spec.gen :as gen]]
-       :cljs
-       [[clojure.spec.alpha :as s]
-        [clojure.spec.gen.alpha :as gen]
-        [clojure.test.check.generators]])))
+   [clojure.spec.alpha :as s]
+   [clojure.spec.gen.alpha :as gen]
+   [clojure.test.check.generators]))
 
 (def not-empty-string-alphanumeric
   (->>
