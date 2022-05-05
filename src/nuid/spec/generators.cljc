@@ -4,6 +4,12 @@
    [clojure.spec.gen.alpha :as gen]
    [clojure.test.check.generators]))
 
+
+    ;;;
+    ;;; NOTE: generators
+    ;;;
+
+
 (def not-empty-string-alphanumeric
   (->>
    (gen/string-alphanumeric)
@@ -11,6 +17,7 @@
 
 (def email-address
   (->>
-   (repeat 3 not-empty-string-alphanumeric)
-   (apply gen/tuple)
+   (gen/tuple nuid.spec.generators/not-empty-string-alphanumeric
+              nuid.spec.generators/not-empty-string-alphanumeric
+              (s/gen #{"com" "edu" "gov" "io"}))
    (gen/fmap (fn [[name host tld]] (str name "@" host "." tld)))))

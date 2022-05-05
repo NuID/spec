@@ -3,6 +3,12 @@
    [clojure.spec.alpha :as s]
    [nuid.spec.generators :as generators]))
 
+
+   ;;;
+   ;;; NOTE: predicates, specs
+   ;;;
+
+
 (s/def ::not-empty-string
   (s/and string? seq))
 
